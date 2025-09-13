@@ -13,20 +13,22 @@ Follow the steps below to set up and run the project. (Example)
 // TODO: List software, runtimes, frameworks, and or dependencies
 // along with instructions on how to set each up.
 ```
-- Example: Node.js v18+
-- Example: Python 3.10
-- Example: Docker
+- Node.js v18+
+- npm or yarn
+- SQLite3
+- Git
 
 ---
 
 ## ⚙️ Installation
 ``` bash
 # Clone the repository
-git clone <your-repo-url>
-cd <repo-name>
+git clone https://github.com/Mnqobi-Mhlongo/GoGroceryGetter.git
+cd GoGroceryGetter
 
 # Install dependencies
-<insert command here>
+cd src
+npm install
 ```
 
 ## ▶️ Running the Project
