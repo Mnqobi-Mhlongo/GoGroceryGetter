@@ -1,0 +1,13 @@
+[
+    { "store": "StoreA", "item": "Milk", "price": 2.99, "is_special": true },
+    { "store": "StoreA", "item": "Bread", "price": 1.99, "is_special": false },
+    { "store": "StoreA", "item": "Eggs", "price": 3.49, "is_special": true },
+
+    { "store": "StoreB", "item": "Milk", "price": 3.49, "is_special": false },
+    { "store": "StoreB", "item": "Bread", "price": 2.29, "is_special": true },
+    { "store": "StoreB", "item": "Eggs", "price": 3.29, "is_special": false },
+
+    { "store": "StoreC", "item": "Milk", "price": 3.19, "is_special": false },
+    { "store": "StoreC", "item": "Bread", "price": 2.09, "is_special": true },
+    { "store": "StoreC", "item": "Eggs", "price": 3.59, "is_special": false }
+]
