@@ -3,33 +3,19 @@ import { useState } from "react";
 function App() {
   const [shoppingList, setShoppingList] = useState("");
   const [results, setResults] = useState(null);
-  const [loading, setLoading] = useState(false);
-  const [error, setError] = useState(null);
 
   const handleCompare = async () => {
-    setLoading(true);
-    setError(null);
-    
     const items = shoppingList.split(",").map((i) => i.trim());
-    
     try {
       const response = await fetch("http://localhost:4000/compare", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ shoppingList: items }),
       });
-      
-      if (!response.ok) {
-        throw new Error(`Server error: ${response.status}`);
-      }
-      
       const data = await response.json();
       setResults(data);
     } catch (err) {
       console.error("Error fetching comparison:", err);
-      setError(err.message);
-    } finally {
-      setLoading(false);
     }
   };
 
@@ -44,15 +30,7 @@ function App() {
         onChange={(e) => setShoppingList(e.target.value)}
         style={{ width: "300px", marginRight: "10px" }}
       />
-      <button onClick={handleCompare} disabled={loading}>
-        {loading ? "Comparing..." : "Compare Prices"}
-      </button>
-
-      {error && (
-        <div style={{ color: "red", marginTop: "20px" }}>
-          <p>Error: {error}</p>
-        </div>
-      )}
+      <button onClick={handleCompare}>Compare Prices</button>
 
       {results && (
         <div style={{ marginTop: "20px" }}>
@@ -75,3 +53,4 @@ function App() {
 }
 
 export default App;
+// src/frontend/src/App.jsx
