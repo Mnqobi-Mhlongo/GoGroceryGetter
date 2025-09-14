@@ -1,15 +1,10 @@
-const fs = require('fs');
-const path = require('path');
+const fs = require("fs");
+const path = require("path");
 
 function loadPrices() {
-    const dataPath = path.join(__dirname, "../../..", "assets/data/prices.json");
-    try {
-        const rawData = fs.readFileSync(dataPath);
-        return JSON.parse(rawData);
-    } catch (err) {
-        console.error('Error loading prices:', err);
-        return null;
-    }
+  const filePath = path.join(__dirname, "../assets/prices.json");
+  const data = fs.readFileSync(filePath, "utf-8");
+  return JSON.parse(data);
 }
 
-module.exports = { loadPrices };
+module.exports = loadPrices;

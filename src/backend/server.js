@@ -1,9 +1,17 @@
-const express = require("express");
+const express = require('express');
+const cors = require('cors'); // Add this line
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors());
+
+// Your existing middleware
 app.use(express.json());
 
-const compareRoute = require("./routes/compare");
-app.use("/compare", compareRoute);
+// Your routes
+app.use('/compare', require('./routes/compare'));
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
+// Start server
+app.listen(4000, () => {
+  console.log('Server running on port 4000');
+});
